@@ -163,7 +163,7 @@
         .img-container {
             position: relative;
             width: 100%;
-            padding-top: 110%; /* مظهر طولي أنيق للذهب */
+            padding-top: 110%;
             background-color: #000;
             overflow: hidden;
         }
@@ -329,10 +329,9 @@
     </footer>
 
     <script>
-        // رقم الواتساب الرسمي لمحل كريتر للمجوهرات
         const storeWhatsapp = "967777062016";
 
-        // مصفوفة منتجات محل كريتر مطابقة 100% لأسماء الملفات في جيت هب
+        // مصفوفة منتجات محل كريتر مطابقة 100% لأسماء الملفات الجديدة
         const productsList = [
             {
                 id: 1,
@@ -341,7 +340,7 @@
                 categoryName: "خواتم",
                 karat: "21",
                 weight: "6.27",
-                image: "ring_6_27g.jpg"
+                image: "6_27g.jpg"
             },
             {
                 id: 2,
@@ -350,7 +349,7 @@
                 categoryName: "خواتم",
                 karat: "21",
                 weight: "5.74",
-                image: "ring_5_74g.jpg"
+                image: "5_74g.jpg"
             },
             {
                 id: 3,
@@ -395,7 +394,7 @@
                 categoryName: "قلائد",
                 karat: "21",
                 weight: "غير محدد",
-                image: "Pendant_1.jpg"
+                image: "endant_1.jpg"
             },
             {
                 id: 8,
@@ -404,20 +403,17 @@
                 categoryName: "قلائد",
                 karat: "21",
                 weight: "غير محدد",
-                image: "pendant_2.jpg"
+                image: "ndant_2.jpg"
             }
         ];
 
-        // دالة عرض البطاقات
         function displayProducts(items) {
             const grid = document.getElementById('productsGrid');
             grid.innerHTML = '';
 
             items.forEach(item => {
-                // رابط الصورة المباشر من الموقع
                 const imgFullUrl = window.location.origin + '/' + item.image;
 
-                // نص الرسالة المفصل مع الصورة والمعلومات الكاملة للتعرف السريع
                 const waMessage = `السلام عليكم ورحمة الله وبركاته،%0Aأود الاستفسار عن سعر هذه القطعة من *كريتر للمجوهرات*:%0A%0A✨ *اسم القطعة:* ${item.title}%0A🏷️ *العيار:* ${item.karat}%0A⚖️ *الوزن:* ${item.weight} جرام%0A🖼️ *صورة القطعة:* ${imgFullUrl}%0A%0Aكم سعرها اليوم مع المصنعية؟`;
 
                 const linkWA = `https://wa.me/${storeWhatsapp}?text=${waMessage}`;
@@ -445,7 +441,6 @@
             });
         }
 
-        // دالة التصفية حسب القسم
         function filterCategory(cat, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -458,7 +453,6 @@
             }
         }
 
-        // البدء عند فتح الصفحة
         window.onload = () => displayProducts(productsList);
     </script>
 </body>
